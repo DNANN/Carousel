@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Carousel by DNANN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Carousel</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/DNANN/Carousel" class="btn">View on GitHub</a>
+      <a href="https://github.com/DNANN/Carousel/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/DNANN/Carousel/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd%22%3E">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</a>
+
+</p>
+
+图片轮播 jq(左右切换)
+
+
+  body,div,ul,li,a,img{margin: 0;padding: 0;}
+  ul,li{list-style: none;}
+  a{text-decoration: none;}
+  #wrapper{position: relative;margin: 30px auto;width: 400px;height: 200px;}
+  #banner{position:relative;width: 400px;height: 200px;overflow: hidden;}
+  .imgList{position:relative;width:2000px;height:200px;z-index: 10;overflow: hidden;}
+  .imgList li{float:left;display: inline;}
+  #prev,
+  #next{position: absolute;top:80px;z-index: 20;cursor: pointer;opacity: 0.2;filter:alpha(opacity=20);}
+  #prev{left: 10px;}
+  #next{right: 10px;}
+  #prev:hover,
+  #next:hover{opacity: 0.5;filter:alpha(opacity=50);}
+  .bg{position: absolute;bottom: 0;width: 400px;height: 40px;z-index:20;opacity: 0.4;filter:alpha(opacity=40);background: black;}
+  .infoList{position: absolute;left: 10px;bottom: 10px;z-index: 30;}
+  .infoList li{display: none;}
+  .infoList .infoOn{display: inline;color: white;}
+  .indexList{position: absolute;right: 10px;bottom: 5px;z-index: 30;}
+  .indexList li{float: left;margin-right: 5px;padding: 2px 4px;border: 2px solid black;background: grey;cursor: pointer;}
+  .indexList .indexOn{background: red;font-weight: bold;color: white;}
+
+
+<p>
+</p>
+  <div id="wrapper">&lt;!-- 最外层部分 --&gt;
+    <div id="banner">&lt;!-- 轮播部分 --&gt;
+      <ul>&lt;!-- 图片部分 --&gt;
+        <li><a href="#"><img src="./img/test1.jpg" width="400px" height="200px" alt="puss in boots1"></a></li>
+      <li><a href="#"><img src="./img/test2.jpg" width="400px" height="200px" alt="puss in boots2"></a></li>
+      <li><a href="#"><img src="./img/test3.jpg" width="400px" height="200px" alt="puss in boots3"></a></li>
+      <li><a href="#"><img src="./img/test4.jpg" width="400px" height="200px" alt="puss in boots4"></a></li>
+      <li><a href="#"><img src="./img/test5.jpg" width="400px" height="200px" alt="puss in boots5"></a></li>
+      </ul>
+      <img src="./img/prev.png" width="20px" height="40px" id="prev">
+      <img src="./img/next.png" width="20px" height="40px" id="next">
+      <div></div> &lt;!-- 图片底部背景层部分--&gt;
+      <ul>&lt;!-- 图片左下角文字信息部分 --&gt;
+        <li>puss in boots1</li>
+        <li>puss in boots2</li>
+        <li>puss in boots3</li>
+        <li>puss in boots4</li>
+        <li>puss in boots5</li>
+      </ul>
+      <ul>&lt;!-- 图片右下角序号部分 --&gt;
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+
+
+
+<p>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd%22%3E">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</a>
+
+</p>
+
+图片轮播 js原生(左右切换)
+
+
+  body,div,ul,li,a,img{margin: 0;padding: 0;}
+  ul,li{list-style: none;}
+  a{text-decoration: none;}
+ 
+  #wrapper{position: relative;margin: 30px auto;width: 400px;height: 200px;}
+  #banner{position:relative;width: 400px;height: 200px;overflow: hidden;}
+  .imgList{position:relative;width:2000px;height:200px;z-index: 10;overflow: hidden;}
+  .imgList li{float:left;display: inline;}
+  #prev,
+  #next{position: absolute;top:80px;z-index: 20;cursor: pointer;opacity: 0.2;filter:alpha(opacity=20);}
+  #prev{left: 10px;}
+  #next{right: 10px;}
+  #prev:hover,
+  #next:hover{opacity: 0.5;filter:alpha(opacity=50);}
+  .bg{position: absolute;bottom: 0;width: 400px;height: 40px;z-index:20;opacity: 0.4;filter:alpha(opacity=40);background: black;}
+  .infoList{position: absolute;left: 10px;bottom: 10px;z-index: 30;}
+  .infoList li{display: none;}
+  .infoList .infoOn{display: inline;color: white;}
+  .indexList{position: absolute;right: 10px;bottom: 5px;z-index: 30;}
+  .indexList li{float: left;margin-right: 5px;padding: 2px 4px;border: 2px solid black;background: grey;cursor: pointer;}
+  .indexList .indexOn{background: red;font-weight: bold;color: white;}
+
+
+<p>
+</p>
+  <div id="wrapper">&lt;!-- 最外层部分 --&gt;
+    <div id="banner">&lt;!-- 轮播部分 --&gt;
+      <ul>&lt;!-- 图片部分 --&gt;
+        <li><a href="#"><img src="./img/test1.jpg" width="400px" height="200px" alt="puss in boots1"></a></li>
+      <li><a href="#"><img src="./img/test2.jpg" width="400px" height="200px" alt="puss in boots2"></a></li>
+      <li><a href="#"><img src="./img/test3.jpg" width="400px" height="200px" alt="puss in boots3"></a></li>
+      <li><a href="#"><img src="./img/test4.jpg" width="400px" height="200px" alt="puss in boots4"></a></li>
+      <li><a href="#"><img src="./img/test5.jpg" width="400px" height="200px" alt="puss in boots5"></a></li>
+      </ul>
+      <img src="./img/prev.png" width="20px" height="40px" id="prev">
+      <img src="./img/next.png" width="20px" height="40px" id="next">
+      <div></div> &lt;!-- 图片底部背景层部分--&gt;
+      <ul>&lt;!-- 图片左下角文字信息部分 --&gt;
+        <li>puss in boots1</li>
+        <li>puss in boots2</li>
+        <li>puss in boots3</li>
+        <li>puss in boots4</li>
+        <li>puss in boots5</li>
+      </ul>
+      <ul>&lt;!-- 图片右下角序号部分 --&gt;
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+  
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/DNANN/Carousel">Carousel</a> is maintained by <a href="https://github.com/DNANN">DNANN</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
